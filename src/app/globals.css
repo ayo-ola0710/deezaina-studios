@@ -139,6 +139,27 @@ html {
   border: 1px solid var(--glass-border);
 }
 
+/* Infinite Marquee Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
 /* Fluid typography utilities */
 .type-h1 {
   font-family: var(--font-display);
