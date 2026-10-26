@@ -52,7 +52,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-40 transition-transform duration-300 ease-[var(--e1)] border-b",
+          "fixed top-0 left-0 right-0 md:right-8 z-40 transition-transform duration-300 ease-[var(--e1)] border-b",
           isVisible ? "translate-y-0" : "-translate-y-full",
           isScrolled
             ? "bg-[rgba(5,5,5,0.85)] backdrop-blur-xl border-[var(--glass-border)] shadow-lg"
@@ -109,13 +109,6 @@ export default function Navbar() {
 
           {/* Mobile Actions: CTA + Hamburger */}
           <div className="flex md:hidden items-center gap-3">
-            <button
-              type="button"
-              onClick={openBooking}
-              className="btn-r !py-2 !px-3 !text-[11px]"
-            >
-              Diagnose
-            </button>
 
             <button
               type="button"

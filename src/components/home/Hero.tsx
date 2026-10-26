@@ -5,6 +5,8 @@ import Label from "@/components/ui/Label";
 import Reveal from "@/components/ui/Reveal";
 import { useUI } from "@/store/useUI";
 
+import HeroLens from "./HeroLens";
+
 export default function Hero() {
   const { openBooking } = useUI();
 
@@ -32,10 +34,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <h1 className="font-display font-extrabold text-[clamp(2.75rem,7vw,6.2rem)] leading-[0.96] tracking-tight text-[var(--W)]">
-            DIAGNOSE BEFORE <br />
-            DESIGN.
-          </h1>
+          <HeroLens />
         </Reveal>
 
         <Reveal delay={0.2}>

@@ -26,17 +26,17 @@ export default function Cursor() {
     const label = labelRef.current;
     if (!dot || !ring) return;
 
-    const xDot = gsap.quickTo(dot, "x", { duration: 0.1, ease: "power3" });
-    const yDot = gsap.quickTo(dot, "y", { duration: 0.1, ease: "power3" });
+    const xDot = gsap.quickTo(dot, "x", { duration: 0.06, ease: "power3" });
+    const yDot = gsap.quickTo(dot, "y", { duration: 0.06, ease: "power3" });
 
-    const xRing = gsap.quickTo(ring, "x", { duration: 0.35, ease: "power3" });
-    const yRing = gsap.quickTo(ring, "y", { duration: 0.35, ease: "power3" });
+    const xRing = gsap.quickTo(ring, "x", { duration: 0.22, ease: "power3" });
+    const yRing = gsap.quickTo(ring, "y", { duration: 0.22, ease: "power3" });
 
     const xLabel = label
-      ? gsap.quickTo(label, "x", { duration: 0.35, ease: "power3" })
+      ? gsap.quickTo(label, "x", { duration: 0.22, ease: "power3" })
       : null;
     const yLabel = label
-      ? gsap.quickTo(label, "y", { duration: 0.35, ease: "power3" })
+      ? gsap.quickTo(label, "y", { duration: 0.22, ease: "power3" })
       : null;
 
     const handlePointerMove = (e: PointerEvent) => {
