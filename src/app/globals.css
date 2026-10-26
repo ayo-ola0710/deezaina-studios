@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #050505;
+  --color-charcoal: #121212;
+  --color-bone: #F4F2EC;
+  --color-red: #E61515;
+  --color-void-2: #0a0a0a;
+  --color-charcoal-2: #1a1a1a;
+  --color-bone-4: rgba(244, 242, 236, 0.04);
+  --color-bone-8: rgba(244, 242, 236, 0.08);
+  --color-bone-15: rgba(244, 242, 236, 0.15);
+  --color-bone-35: rgba(244, 242, 236, 0.35);
+  --color-bone-55: rgba(244, 242, 236, 0.55);
+  --color-red-4: rgba(230, 21, 21, 0.04);
+  --color-red-8: rgba(230, 21, 21, 0.08);
+  --color-red-15: rgba(230, 21, 21, 0.15);
+  --color-red-30: rgba(230, 21, 21, 0.30);
+  --color-glass: rgba(255, 255, 255, 0.025);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-accel: cubic-bezier(0.55, 0, 1, 0.45);
+
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
+
+  --shadow-hard: 4px 4px 0 var(--color-bone);
+  --shadow-hard-red: 4px 4px 0 var(--color-red);
+}
+
+:root {
+  --K: #050505;
+  --K2: #0a0a0a;
+  --K3: #121212;
+  --K4: #1a1a1a;
+  --W: #F4F2EC;
+  --W4: rgba(244, 242, 236, 0.04);
+  --W8: rgba(244, 242, 236, 0.08);
+  --W15: rgba(244, 242, 236, 0.15);
+  --W35: rgba(244, 242, 236, 0.35);
+  --W55: rgba(244, 242, 236, 0.55);
+  --R: #E61515;
+  --R4: rgba(230, 21, 21, 0.04);
+  --R8: rgba(230, 21, 21, 0.08);
+  --R15: rgba(230, 21, 21, 0.15);
+  --R30: rgba(230, 21, 21, 0.30);
+  --glass: rgba(255, 255, 255, 0.025);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shine: rgba(255, 255, 255, 0.04);
+  --glass-blur: 32px;
+
+  --e1: cubic-bezier(0.19, 1, 0.22, 1);
+  --e2: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --e3: cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+html {
+  background: var(--K);
+  color: var(--W);
+  font-family: var(--font-body);
+  scroll-behavior: auto;
+}
+
+/* Sharp corners default across the board */
+* {
+  border-radius: 0;
+}
+
+/* Keyboard focus style (rule 11) */
+:focus-visible {
+  outline: 2px solid var(--R);
+  outline-offset: 2px;
+}
+
+/* Component base styles */
+.btn-r {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--R);
+  color: var(--W);
+  border: 2px solid var(--W);
+  box-shadow: 4px 4px 0 var(--W);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.875rem 1.75rem;
+  transition: transform 0.2s var(--e1), box-shadow 0.2s var(--e1);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-r:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--W);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--W);
+  border: 2px solid var(--W);
+  box-shadow: 4px 4px 0 var(--W);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.875rem 1.75rem;
+  transition: transform 0.2s var(--e1), box-shadow 0.2s var(--e1);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--W);
+}
+
+.card-neo {
+  background-color: var(--K3);
+  border: 2px solid var(--W15);
+  box-shadow: none;
+  transition: border-color 0.25s var(--e1), box-shadow 0.25s var(--e1), transform 0.25s var(--e1);
+}
+.card-neo:hover {
+  border-color: var(--R);
+  box-shadow: 4px 4px 0 var(--R);
+}
+
+.glass-panel {
+  background-color: var(--glass);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Fluid typography utilities */
+.type-h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.type-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.type-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 65ch;
+  color: var(--W55);
+}
+
+.type-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--R);
+}
